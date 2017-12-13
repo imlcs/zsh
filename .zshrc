@@ -97,3 +97,4 @@ alias grep='egrep -i --color=auto --exclude-dir={.bzr,CVS,.git,.hg,.svn}'
 alias mkdir="mkdir -pv"
 alias du="du -h"
 alias ipy="ipython"
+alias cl="clear"
