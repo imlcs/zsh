@@ -83,6 +83,7 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+export HISTTIMEFORMAT="%Y%m%d-%H%M%S: "
 alias vi=vim
 alias pssh="pssh -P -h"
 alias vi=vim
