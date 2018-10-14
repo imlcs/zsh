@@ -84,11 +84,11 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 export HISTTIMEFORMAT="%Y%m%d-%H%M%S: "
-alias vi=vim
 alias pssh="pssh -P -h"
 alias vi=vim
 alias scl=systemctl
 alias py=python
+alias py3=python3
 alias ls='ls --time-style=long-iso --color=auto'
 alias cp="cp --backup=t -av"
 alias mv="mv --backup=t -v"
@@ -98,11 +98,25 @@ alias grep='egrep -i --color=auto --exclude-dir={.bzr,CVS,.git,.hg,.svn}'
 alias mkdir="mkdir -pv"
 alias du="du -h"
 alias ipy="ipython"
-alias cl="clear"
-alias sst="ss -anptl | column"
-alias ssu="ss -anupl | column"
+alias c="clear"
+alias sst="ss -anptl"
+alias ssu="ss -anupl"
 alias taf="tail -f"
 alias dc="docker-compose"
 alias dce="docker-compose exec"
 alias dcd="docker-compose down"
 alias dcu="docker-compose up -d"
+alias mount='mount |column -t'
+alias h='history' 
+alias j='jobs -l'
+alias date="date '+%F %T'"
+alias ping='ping -c 4 -i.2'
+alias wget="wget -c"
+alias iptlist="iptables -L -n --line-number | column -t"
+alias iptin="iptables -L INPUT -n --line-number | column -t"
+alias iptout="iptables -L OUPUT -n --line-number | column -t"
+alias iptfw="iptables -L FORWARD -n --line-number | column -t"
+alias ipe='curl ipinfo.io/ip'
+alias www='python -m SimpleHTTPServer 8000'
+alias untar='tar -xf'
+alias df='df -h | grep -v tmpfs | column -t'
