@@ -124,9 +124,9 @@ alias www='python -m SimpleHTTPServer 8000'
 alias untar='tar -xf'
 alias df='df -h | grep -v tmpfs | column -t'
 alias kbc="kubectl"
+alias nodes="kubectl get nodes -o wide"
 alias allpods="kubectl get pods --all-namespaces -o wide"
 alias pods="kubectl get pods -o wide"
-alias nodes="kubectl get nodes -o wide"
 alias kds="kubectl describe"
 alias rss="kubectl get rs -o wide"
 alias dss="kubectl get ds -o wide"
@@ -140,9 +140,14 @@ alias cms="kubectl get cm -o wide"
 alias sts="kubectl get sts -o wide"
 alias kexec="kubectl exec -it"
 alias kde="kubectl delete"
+alias klo="kubectl logs"
 alias kplain="kubectl explain"
 alias kce="kubectl create"
 alias kapply="kubectl apply"
 alias deploys="kubectl get deploy -o wide"
 alias y=ydcv
 alias etcdctl='etcdctl --ca-file=/opt/etcd/ssl/ca.pem --cert-file=/opt/etcd/ssl/server.pem --key-file=/opt/etcd/ssl/server-key.pem --endpoints="https://192.168.4.11:2379,https://192.168.4.25:2379,https://192.168.4.26:2379"'
+alias nh="\history | sed 's/^[ ]*[0-9]\+[ ]*//'"
+alias ddu="ls -F | grep '/$' | xargs -i du -s {} | sort -rn | cut -f2 | xargs -i du -sh {}"
+alias fdu="ls -F | grep -v '/$' | xargs -i du -s {} | sort -rn | cut -f2 | xargs -i du -sh {}"
+source <(kubectl completion zsh)
