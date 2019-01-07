@@ -146,8 +146,10 @@ alias kce="kubectl create"
 alias kapply="kubectl apply"
 alias deploys="kubectl get deploy -o wide"
 alias y=ydcv
-alias etcdctl='etcdctl --ca-file=/opt/etcd/ssl/ca.pem --cert-file=/opt/etcd/ssl/server.pem --key-file=/opt/etcd/ssl/server-key.pem --endpoints="https://192.168.4.11:2379,https://192.168.4.25:2379,https://192.168.4.26:2379"'
 alias nh="\history | sed 's/^[ ]*[0-9]\+[ ]*//'"
 alias ddu="ls -F | grep '/$' | xargs -i du -s {} | sort -rn | cut -f2 | xargs -i du -sh {}"
 alias fdu="ls -F | grep -v '/$' | xargs -i du -s {} | sort -rn | cut -f2 | xargs -i du -sh {}"
 source <(kubectl completion zsh)
+function backup() {
+    cp -a  $1 $1_$(\date "+%F_%T")
+}
