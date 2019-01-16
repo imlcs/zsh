@@ -146,10 +146,17 @@ alias kce="kubectl create"
 alias kapply="kubectl apply"
 alias deploys="kubectl get deploy -o wide"
 alias y=ydcv
-alias nh="\history | sed 's/^[ ]*[0-9]\+[ ]*//'"
 alias ddu="ls -F | grep '/$' | xargs -i du -s {} | sort -rn | cut -f2 | xargs -i du -sh {}"
 alias fdu="ls -F | grep -v '/$' | xargs -i du -s {} | sort -rn | cut -f2 | xargs -i du -sh {}"
 source <(kubectl completion zsh)
 function backup() {
     cp -a  $1 $1_$(\date "+%F_%T")
+}
+function nh() {
+    if [[ -z $1 ]];then
+        num=5
+    else
+        num=$1
+    fi
+    \history | sed 's/^[ ]*[0-9]\+[ ]*//' | tail -n $num
 }
