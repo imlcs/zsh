@@ -111,7 +111,6 @@ alias dcu="docker-compose up -d"
 alias mount='mount |column -t'
 alias h='history' 
 alias j='jobs -l'
-alias date="date '+%F %T'"
 alias ping='ping -c 4 -i.2'
 alias wget="wget -c"
 alias iptlist="iptables -L -n --line-number | column -t"
@@ -123,6 +122,9 @@ alias addr="ip -4 addr"
 alias www='python -m SimpleHTTPServer 8000'
 alias untar='tar -xf'
 alias df='df -h | grep -v tmpfs | column -t'
+
+#################################################################
+# kubernetes 命令别名
 alias kbc="kubectl"
 alias nodes="kubectl get nodes -o wide"
 alias allpods="kubectl get pods --all-namespaces -o wide"
@@ -145,18 +147,9 @@ alias kplain="kubectl explain"
 alias kce="kubectl create"
 alias kapply="kubectl apply"
 alias deploys="kubectl get deploy -o wide"
+#################################################################
+
 alias y=ydcv
 alias ddu="ls -F | grep '/$' | xargs -i du -s {} | sort -rn | cut -f2 | xargs -i du -sh {}"
 alias fdu="ls -F | grep -v '/$' | xargs -i du -s {} | sort -rn | cut -f2 | xargs -i du -sh {}"
 source <(kubectl completion zsh)
-function backup() {
-    cp -a  $1 $1_$(\date "+%F_%T")
-}
-function nh() {
-    if [[ -z $1 ]];then
-        num=5
-    else
-        num=$1
-    fi
-    \history | sed 's/^[ ]*[0-9]\+[ ]*//' | tail -n $num
-}
