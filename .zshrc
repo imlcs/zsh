@@ -121,7 +121,7 @@ alias ipe='curl ipinfo.io/ip'
 alias addr="ip -4 addr"
 alias www='python -m SimpleHTTPServer 8000'
 alias untar='tar -xf'
-alias df='df -h | grep -v tmpfs | column -t'
+alias df='df -h | egrep -v "tmpfs|overlay2|containers" | column -t'
 alias stl='supervisorctl'
 
 #################################################################
