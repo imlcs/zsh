@@ -28,10 +28,18 @@ trash()
     mv -i $@ ~/.trash/
 }
 
-cleartrash()
+bashclear()
 {
     read -p "clear sure?[Y/n]" confirm
     [ $confirm == 'y' ] || [ $confirm == 'Y' ] && /bin/rm -rf ~/.trash/*
+}
+zshclear()
+{
+    read "confirm?clear sure?[Y/n]"
+    if [[ "$confirm" =~ ^[Yy]$ ]]
+    then
+        /bin/rm -rf ~/.trash/*
+    fi
 }
 
 ##############################################################################
