@@ -14,7 +14,6 @@
 # cleartrash: 清空回收站
 [[ -d "~/.trash" ]] || mkdir -p ~/.trash
 alias rm=trash
-alias r=trash
 alias rl='ls ~/.trash/'
 alias ul=undelfile
 
