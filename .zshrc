@@ -123,7 +123,8 @@ alias www='python -m SimpleHTTPServer 8000'
 alias untar='tar -xf'
 alias df='df -h | egrep -v "tmpfs|overlay2|containers" | column -t'
 alias stl='supervisorctl'
-
+alias makemigrations="python3.6 manage.py makemigrations"
+alias migrate="python3.6 manage.py migrate"
 #################################################################
 # kubernetes 命令别名
 alias kbc="kubectl"
