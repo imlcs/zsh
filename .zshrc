@@ -21,12 +21,12 @@ alias ul=undelfile
 
 undelfile()
 {
-    mv -i ~/.trash/$@ ./
+    mv --backup=t -v -i ~/.trash/$@ ./
 }
 
 trash()
 {
-    mv -i $@ ~/.trash/
+    mv --backup=t -v -i $@ ~/.trash/
 }
 
 bashclear()
