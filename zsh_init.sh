@@ -9,5 +9,5 @@ mv $HOME/vim-master/.vim $HOME/vim-master/.vimrc $HOME && rm -fr $HOME/vim-maste
 
 wget https://github.com/imlcs/zsh/archive/refs/heads/master.zip -O $HOME/zsh.zip  && unzip $HOME/zsh.zip && rm -f $HOME/zsh.zip
 
-mv $HOME/zsh-master/.function /etc/profile.d 
+mv $HOME/zsh-master/custom_function.sh /etc/profile.d 
 mv $HOME/zsh-master/.zshrc $HOME/zsh-master/.oh-my-zsh $HOME && /bin/rm -fr $HOME/zsh-master
