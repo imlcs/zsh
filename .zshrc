@@ -161,6 +161,8 @@ alias dc="docker-compose"
 alias dce="docker-compose exec"
 alias dcd="docker-compose down"
 alias dcu="docker-compose up -d"
+alias dlo="docker logs -f"
+alias dslo="docker logs -f --tail=10"
 alias mount='mount |column -t'
 alias h='history' 
 alias ping='ping -c 4 -i.2'
