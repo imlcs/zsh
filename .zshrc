@@ -218,4 +218,5 @@ alias eps="kubectl get endpoints"
 alias y=ydcv
 alias ddu="ls -F | grep '/$' | xargs -i du -s {} | sort -rn | cut -f2 | xargs -i du -sh {}"
 alias fdu="ls -F | grep -v '/$' | xargs -i du -s {} | sort -rn | cut -f2 | xargs -i du -sh {}"
+alias gpt="git push origin --tags"
 source <(kubectl completion zsh)
