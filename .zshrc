@@ -158,11 +158,11 @@ alias sst="ss -anptl | column -t"
 alias ssu="ss -anupl | column -t"
 alias taf="tail -f"
 alias dc="docker-compose"
-alias dce="docker-compose exec"
+alias dce="docker exec -it"
 alias dcd="docker-compose down"
 alias dcu="docker-compose up -d"
-alias dlo="docker logs -f"
-alias dslo="docker logs -f --tail=10"
+alias dlo="docker-compose logs -f"
+alias dslo="docker-compose logs -f --tail=10"
 alias mount='mount |column -t'
 alias h='history' 
 alias ping='ping -c 4 -i.2'
