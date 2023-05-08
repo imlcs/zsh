@@ -217,7 +217,7 @@ alias eps="kubectl get endpoints"
 
 alias y=ydcv
 alias ddu="ls -F | grep '/$' | xargs -i du -s {} | sort -rn | cut -f2 | xargs -i du -sh {}"
-alias fdu="ls -F | grep -v '/$' | tr -d "*" | xargs -i du -s {} | sort -rn | cut -f2 | xargs -i du -sh {}"
+alias fdu="ls -F | grep -v '/$' | tr -d '*' | xargs -i du -s {} | sort -rn | cut -f2 | xargs -i du -sh {}"
 alias gtv="git log --tags --simplify-by-decoration --pretty='format:%ai %d'"
 alias gtp="git push --tag"
 alias gtd="git tag -d"
