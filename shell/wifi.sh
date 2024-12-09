@@ -1,9 +1,12 @@
-sudo apt-get install git build-essential
-git clone https://git.kernel.org/pub/scm/linux/kernel/git/iwlwifi/backport-iwlwifi.git
+sudo apt install flex bison
+
+git clone https://github.com/intel/backport-iwlwifi.git
+git checkout 1253d237296cc5469335c438571325216c629be3
+
 cd backport-iwlwifi
-make defconfig-iwlwifi-public
-sed -i 's/CPTCFG_IWLMVM_VENDOR_CMDS=y/# CPTCFG_IWLMVM_VENDOR_CMDS is not set/' .config
-make -j4
+cd iwlwifi-stack-dev
+sudo make defconfig-iwlwifi-public
+sudo make
 sudo make install
 
 
