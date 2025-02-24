@@ -7,7 +7,6 @@
 sudo tee /etc/docker/daemon.json <<-'EOF'
 {
     "registry-mirrors": [
-    "https://docker.rainbond.cc",
     "https://docker.1panel.live",
     "https://docker.cloudmessage.top"
   ]
