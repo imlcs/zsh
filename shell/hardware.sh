@@ -90,13 +90,17 @@ get_nic_info() {
     # 获取物理网卡信息，过滤掉虚拟网卡（如docker网卡）
     nic_info=$(ip -o link show | awk -F': ' '{print $2}' | grep -E '^(eth|ens|enp)')
     while IFS= read -r line; do
-        echo -e "${GREEN}网卡名称: $line${NC}"
+        echo -e "  ${GREEN}名称: $line${NC}"
         if ip -o link show $line | grep -q "state UP"; then
-            echo -e "${GREEN}状态: 已连接${NC}"
+            echo -e "  ${GREEN}状态: 已连接${NC}"
+            ADDR=$(ip addr | grep $line | grep inet | awk '{print $2}' | awk -F/ '{print $1}')
+            echo -e "  ${GREEN}地址: $ADDR${NC}"
         else
-            echo -e "${RED}状态: 未连接${NC}"
+            echo -e "  ${RED}状态: 未连接${NC}"
         fi
     done <<< "$nic_info"
+    GATEWAY=$(route -n |grep ^0.0.0.0 | awk '{print $2}')
+    echo -e "  ${GREEN}网关: $GATEWAY${NC}"
 }
 
 # 定义获取显卡信息的函数
