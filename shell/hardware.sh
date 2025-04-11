@@ -80,7 +80,8 @@ get_mem() {
 # 获取磁盘信息
 get_disk() {
     echo -e "${YELLOW}磁盘信息:${NC}"
-    lsblk -d -o NAME,TYPE,SIZE | grep -v loop
+    #lsblk -d -o NAME,TYPE,SIZE | grep -v loop
+    /usr/bin/df -hT | egrep -v "tmpfs|overlay2|containers"
 }
 
 # 获取物理网卡信息
