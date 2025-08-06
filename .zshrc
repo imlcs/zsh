@@ -157,12 +157,12 @@ alias c="clear"
 alias sst="ss -anptl | column -t"
 alias ssu="ss -anupl | column -t"
 alias taf="tail -f"
-alias dc="docker-compose"
-alias dce="docker exec -it"
-alias dcd="docker-compose down"
-alias dcu="docker-compose up -d"
-alias dlo="docker-compose logs -f"
-alias dslo="docker-compose logs -f --tail=10"
+# alias dc="docker-compose"
+# alias dce="docker exec -it"
+# alias dcd="docker-compose down"
+# alias dcu="docker-compose up -d"
+# alias dlo="docker-compose logs -f"
+# alias dslo="docker-compose logs -f --tail=10"
 alias mount='mount |column -t'
 alias h='history' 
 alias ping='ping -c 4 -i.2'
@@ -221,5 +221,42 @@ alias fdu="ls -F | grep -v '/$' | tr -d '*' | xargs -i du -s {} | sort -rn | cut
 alias gtv="git log --tags --simplify-by-decoration --pretty='format:%ai %d'"
 alias gtp="git push --tag"
 alias gtd="git tag -d"
-alias dds="docker inspect"
 source <(kubectl completion zsh)
+
+
+
+### docker
+alias dbl='docker build'
+alias dcin='docker container inspect'
+alias dipu='docker image push'
+alias dirm='docker image rm'
+alias dit='docker image tag'
+alias dl='docker container logs -f'
+alias dlo="docker container logs -f --tail=10"
+alias dnc='docker network create'
+alias dncn='docker network connect'
+alias dndcn='docker network disconnect'
+alias dni='docker network inspect'
+alias dnls='docker network ls'
+alias dnrm='docker network rm'
+alias dpo='docker container port'
+alias dps='docker ps'
+alias dpsa='docker ps -a'
+alias dpu='docker pull'
+alias dst='docker container start'
+alias drs='docker container restart'
+alias dsta='docker stop $(docker ps -q)'
+alias dstp='docker container stop'
+alias dtop='docker top'
+alias dvi='docker volume inspect'
+alias dvls='docker volume ls'
+alias dvprune='docker volume prune'
+alias dce='docker container exec'
+alias dcei='docker container exec -it'
+
+### docker-compose
+[[ -x "${commands[docker-compose]:A}" ]] && dccmd='docker-compose' || dccmd='docker compose'
+
+alias dc="$dccmd"
+alias dcl="$dccmd logs -f"
+alias dclf="$dccmd logs -f --tail 10"
