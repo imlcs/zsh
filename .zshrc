@@ -255,7 +255,7 @@ alias dce='docker container exec'
 alias dcei='docker container exec -it'
 
 ### docker-compose
-[[ -x "${commands[docker-compose]:A}" ]] && dccmd='docker-compose' || dccmd='docker compose'
+which docker-compose &>/dev/null && dccmd='docker-compose' || dccmd='docker compose'
 
 alias dc="$dccmd"
 alias dcl="$dccmd logs -f"
