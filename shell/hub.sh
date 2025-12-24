@@ -6,9 +6,15 @@
 
 sudo tee /etc/docker/daemon.json <<-'EOF'
 {
-    "registry-mirrors": [
-    "https://docker.1panel.live",
-    "https://docker.cloudmessage.top"
+  "log-level": "info",
+  "log-opts": {
+    "max-size": "200m",
+    "max-file": "5"
+  },
+  "registry-mirrors": [
+    "https://docker.1ms.run",
+    "https://proxy.1panel.live",
+    "https://docker.ketches.cn"
   ]
 }
 EOF
