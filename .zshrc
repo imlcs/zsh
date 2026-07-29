@@ -163,7 +163,6 @@ alias taf="tail -f"
 # alias dcu="docker-compose up -d"
 # alias dlo="docker-compose logs -f"
 # alias dslo="docker-compose logs -f --tail=10"
-alias mount='mount |column -t'
 alias h='history' 
 alias ping='ping -c 4 -i.2'
 alias wget="wget -c"
@@ -173,12 +172,13 @@ alias iptout="iptables -L OUPUT -n --line-number | column -t"
 alias iptfw="iptables -L FORWARD -n --line-number | column -t"
 alias ipe='curl ipinfo.io/ip'
 alias addr="ip -4 addr"
-alias www='python -m SimpleHTTPServer 8000'
+# alias www='python -m SimpleHTTPServer 8000'
+alias www="python3 -m http.server 8000"
 alias untar='tar -xf'
-alias df='df -h | egrep -v "tmpfs|overlay2|containers" | column -t'
+alias df='df -h | egrep -v "tmpfs|overlay2|containers|overlay" | column -t'
 alias stl='supervisorctl'
-alias makemigrations="python3.6 manage.py makemigrations"
-alias migrate="python3.6 manage.py migrate"
+alias makemigrations="python3 manage.py makemigrations"
+alias migrate="python3 manage.py migrate"
 #################################################################
 # kubernetes 命令别名
 alias k="kubectl"
